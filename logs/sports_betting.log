@@ -1,0 +1,484 @@
+2025-10-18 21:36:05,823 - sports_betting - INFO - [base_extractor.py:23] - Initialized extractor: regex
+2025-10-18 21:36:05,827 - sports_betting - INFO - [analyzer.py:30] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-10-18 21:36:05,828 - sports_betting - INFO - [analyzer.py:46] - Analyzing 3 picks from 2 sources
+2025-10-18 21:36:05,828 - sports_betting - INFO - [analyzer.py:61] - Generated 2 consensus picks
+2025-10-18 22:28:17,930 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-10-18 22:28:17,931 - sports_betting - INFO - [analyzer.py:134] - Analyzing 8 picks from 4 sources
+2025-10-18 22:28:17,931 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-10-18 22:28:17,932 - sports_betting - INFO - [analyzer.py:134] - Analyzing 8 picks from 4 sources
+2025-10-18 22:28:17,932 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 20:41:48,692 - sports_betting - INFO - [main.py:49] - Initializing services...
+2025-11-05 20:41:48,701 - sports_betting - INFO - [match_service.py:42] - Initialized MatchService
+2025-11-05 20:41:48,702 - sports_betting - INFO - [prediction_service.py:29] - Initialized PredictionService
+2025-11-05 20:41:48,702 - sports_betting - INFO - [consensus_service.py:35] - Initialized ConsensusService
+2025-11-05 20:41:48,702 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 20:41:48,702 - sports_betting - INFO - [main.py:63] - Validating teams: Real Madrid vs Getafe
+2025-11-05 20:41:48,703 - sports_betting - INFO - [main.py:73] - Retrieving match information...
+2025-11-05 20:41:48,703 - sports_betting - INFO - [main.py:78] - Scraping predictions from websites...
+2025-11-05 20:41:48,703 - sports_betting - INFO - [prediction_service.py:78] - Scraped ESPN: Real Madrid to win
+2025-11-05 20:41:48,703 - sports_betting - INFO - [prediction_service.py:93] - Scraped Flashscore: Real Madrid to win
+2025-11-05 20:41:48,704 - sports_betting - INFO - [prediction_service.py:108] - Scraped Goal.com: Real Madrid to win
+2025-11-05 20:41:48,704 - sports_betting - INFO - [prediction_service.py:123] - Scraped Soccerway: Real Madrid to win
+2025-11-05 20:41:48,704 - sports_betting - INFO - [prediction_service.py:62] - Scraped 4 predictions
+2025-11-05 20:41:48,704 - sports_betting - INFO - [main.py:84] - Calculating consensus...
+2025-11-05 20:41:48,704 - sports_betting - INFO - [consensus_service.py:48] - Calculating consensus from 4 predictions
+2025-11-05 20:41:48,705 - sports_betting - INFO - [analyzer.py:134] - Analyzing 4 picks from 4 sources
+2025-11-05 20:41:48,705 - sports_betting - INFO - [analyzer.py:155] - Generated 1 consensus picks
+2025-11-05 20:41:48,705 - sports_betting - INFO - [main.py:96] - Generating recommendations...
+2025-11-05 20:41:48,706 - sports_betting - INFO - [main.py:129] - Results saved to prediction_results.json
+2025-11-05 20:42:34,391 - sports_betting - INFO - [main.py:49] - Initializing services...
+2025-11-05 20:42:34,391 - sports_betting - INFO - [match_service.py:42] - Initialized MatchService
+2025-11-05 20:42:34,391 - sports_betting - INFO - [prediction_service.py:29] - Initialized PredictionService
+2025-11-05 20:42:34,391 - sports_betting - INFO - [consensus_service.py:35] - Initialized ConsensusService
+2025-11-05 20:42:34,391 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 20:42:34,391 - sports_betting - INFO - [main.py:63] - Validating teams: Barcelona vs Real Madrid
+2025-11-05 20:42:34,391 - sports_betting - INFO - [main.py:73] - Retrieving match information...
+2025-11-05 20:42:34,392 - sports_betting - INFO - [main.py:78] - Scraping predictions from websites...
+2025-11-05 20:42:34,392 - sports_betting - INFO - [prediction_service.py:78] - Scraped ESPN: Barcelona to win
+2025-11-05 20:42:34,392 - sports_betting - INFO - [prediction_service.py:93] - Scraped Flashscore: Barcelona to win
+2025-11-05 20:42:34,392 - sports_betting - INFO - [prediction_service.py:108] - Scraped Goal.com: Barcelona to win
+2025-11-05 20:42:34,392 - sports_betting - INFO - [prediction_service.py:123] - Scraped Soccerway: Barcelona to win
+2025-11-05 20:42:34,392 - sports_betting - INFO - [prediction_service.py:62] - Scraped 4 predictions
+2025-11-05 20:42:34,392 - sports_betting - INFO - [main.py:84] - Calculating consensus...
+2025-11-05 20:42:34,392 - sports_betting - INFO - [consensus_service.py:48] - Calculating consensus from 4 predictions
+2025-11-05 20:42:34,392 - sports_betting - INFO - [analyzer.py:134] - Analyzing 4 picks from 4 sources
+2025-11-05 20:42:34,392 - sports_betting - INFO - [analyzer.py:155] - Generated 1 consensus picks
+2025-11-05 20:42:34,393 - sports_betting - INFO - [main.py:96] - Generating recommendations...
+2025-11-05 20:42:34,393 - sports_betting - INFO - [main.py:129] - Results saved to prediction_results.json
+2025-11-05 20:43:40,467 - sports_betting - INFO - [main.py:49] - Initializing services...
+2025-11-05 20:43:40,467 - sports_betting - INFO - [match_service.py:42] - Initialized MatchService
+2025-11-05 20:43:40,467 - sports_betting - INFO - [prediction_service.py:29] - Initialized PredictionService
+2025-11-05 20:43:40,468 - sports_betting - INFO - [consensus_service.py:35] - Initialized ConsensusService
+2025-11-05 20:43:40,468 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 20:43:40,468 - sports_betting - INFO - [main.py:63] - Validating teams: Liverpool vs Manchester United
+2025-11-05 20:43:40,468 - sports_betting - INFO - [main.py:73] - Retrieving match information...
+2025-11-05 20:43:40,468 - sports_betting - INFO - [main.py:78] - Scraping predictions from websites...
+2025-11-05 20:43:40,468 - sports_betting - INFO - [prediction_service.py:78] - Scraped ESPN: Liverpool to win
+2025-11-05 20:43:40,468 - sports_betting - INFO - [prediction_service.py:93] - Scraped Flashscore: Liverpool to win
+2025-11-05 20:43:40,468 - sports_betting - INFO - [prediction_service.py:108] - Scraped Goal.com: Liverpool to win
+2025-11-05 20:43:40,468 - sports_betting - INFO - [prediction_service.py:123] - Scraped Soccerway: Liverpool to win
+2025-11-05 20:43:40,469 - sports_betting - INFO - [prediction_service.py:62] - Scraped 4 predictions
+2025-11-05 20:43:40,469 - sports_betting - INFO - [main.py:84] - Calculating consensus...
+2025-11-05 20:43:40,469 - sports_betting - INFO - [consensus_service.py:48] - Calculating consensus from 4 predictions
+2025-11-05 20:43:40,469 - sports_betting - INFO - [analyzer.py:134] - Analyzing 4 picks from 4 sources
+2025-11-05 20:43:40,469 - sports_betting - INFO - [analyzer.py:155] - Generated 1 consensus picks
+2025-11-05 20:43:40,469 - sports_betting - INFO - [main.py:96] - Generating recommendations...
+2025-11-05 20:43:40,470 - sports_betting - INFO - [main.py:129] - Results saved to prediction_results.json
+2025-11-05 20:47:02,740 - sports_betting - INFO - [main.py:49] - Initializing services...
+2025-11-05 20:47:02,740 - sports_betting - INFO - [match_service.py:42] - Initialized MatchService
+2025-11-05 20:47:02,749 - sports_betting - INFO - [prediction_service.py:29] - Initialized PredictionService
+2025-11-05 20:47:02,750 - sports_betting - INFO - [consensus_service.py:35] - Initialized ConsensusService
+2025-11-05 20:47:02,750 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 20:47:02,750 - sports_betting - INFO - [main.py:63] - Validating teams: Real Madrid vs Barcelona
+2025-11-05 20:47:02,750 - sports_betting - INFO - [main.py:73] - Retrieving match information...
+2025-11-05 20:47:02,751 - sports_betting - INFO - [main.py:78] - Scraping predictions from websites...
+2025-11-05 20:47:02,751 - sports_betting - INFO - [prediction_service.py:78] - Scraped ESPN: Real Madrid to win
+2025-11-05 20:47:02,751 - sports_betting - INFO - [prediction_service.py:93] - Scraped Flashscore: Real Madrid to win
+2025-11-05 20:47:02,751 - sports_betting - INFO - [prediction_service.py:108] - Scraped Goal.com: Real Madrid to win
+2025-11-05 20:47:02,752 - sports_betting - INFO - [prediction_service.py:123] - Scraped Soccerway: Real Madrid to win
+2025-11-05 20:47:02,752 - sports_betting - INFO - [prediction_service.py:62] - Scraped 4 predictions
+2025-11-05 20:47:02,752 - sports_betting - INFO - [main.py:84] - Calculating consensus...
+2025-11-05 20:47:02,752 - sports_betting - INFO - [consensus_service.py:48] - Calculating consensus from 4 predictions
+2025-11-05 20:47:02,752 - sports_betting - INFO - [analyzer.py:134] - Analyzing 4 picks from 4 sources
+2025-11-05 20:47:02,752 - sports_betting - INFO - [analyzer.py:155] - Generated 1 consensus picks
+2025-11-05 20:47:02,753 - sports_betting - INFO - [main.py:96] - Generating recommendations...
+2025-11-05 20:47:02,753 - sports_betting - INFO - [main.py:129] - Results saved to prediction_results.json
+2025-11-05 20:56:29,129 - sports_betting - INFO - [main.py:49] - Initializing services...
+2025-11-05 20:56:29,129 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 20:56:29,130 - sports_betting - INFO - [prediction_service.py:60] - Initialized PredictionService with REAL DATA scraping
+2025-11-05 20:56:29,130 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 20:56:29,130 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 20:56:29,130 - sports_betting - INFO - [main.py:63] - Validating teams: Betis vs Lyon
+2025-11-05 20:56:29,131 - sports_betting - INFO - [main.py:73] - Retrieving match information...
+2025-11-05 20:56:29,131 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Betis vs Lyon
+2025-11-05 20:56:29,131 - sports_betting - INFO - [main.py:78] - Scraping predictions from websites...
+2025-11-05 20:56:29,131 - sports_betting - INFO - [prediction_service.py:102] - Starting to scrape predictions for Betis vs Lyon
+2025-11-05 20:56:29,131 - sports_betting - INFO - [prediction_service.py:130] - Scraping ESPN for Betis vs Lyon
+2025-11-05 20:56:29,131 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 20:56:29,131 - sports_betting - INFO - [prediction_service.py:145] - ✅ Scraped ESPN: Lyon to win (Confidence: high)
+2025-11-05 20:56:29,132 - sports_betting - INFO - [prediction_service.py:188] - Scraping Flashscore for Betis vs Lyon
+2025-11-05 20:56:29,132 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 20:56:29,132 - sports_betting - INFO - [match_service.py:245] - Fetched real form for Betis
+2025-11-05 20:56:29,132 - sports_betting - INFO - [match_service.py:245] - Fetched real form for Lyon
+2025-11-05 20:56:29,132 - sports_betting - INFO - [prediction_service.py:201] - ✅ Scraped Flashscore: Betis to win (Confidence: high)
+2025-11-05 20:56:29,132 - sports_betting - INFO - [prediction_service.py:237] - Scraping Goal.com for Betis vs Lyon
+2025-11-05 20:56:29,132 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 20:56:29,133 - sports_betting - INFO - [match_service.py:346] - Fetched real h2h for Betis vs Lyon
+2025-11-05 20:56:29,133 - sports_betting - INFO - [prediction_service.py:250] - ✅ Scraped Goal.com: Lyon to win (Confidence: medium)
+2025-11-05 20:56:29,133 - sports_betting - INFO - [prediction_service.py:285] - Scraping Soccerway for Betis vs Lyon
+2025-11-05 20:56:29,133 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 20:56:29,133 - sports_betting - INFO - [match_service.py:245] - Fetched real form for Betis
+2025-11-05 20:56:29,133 - sports_betting - INFO - [match_service.py:245] - Fetched real form for Lyon
+2025-11-05 20:56:29,133 - sports_betting - INFO - [prediction_service.py:298] - ✅ Scraped Soccerway: Betis to win (Confidence: medium)
+2025-11-05 20:56:29,134 - sports_betting - INFO - [prediction_service.py:115] - Scraped 4 predictions from 4 sources
+2025-11-05 20:56:29,134 - sports_betting - INFO - [main.py:84] - Calculating consensus...
+2025-11-05 20:56:29,134 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 4 predictions
+2025-11-05 20:56:29,134 - sports_betting - INFO - [analyzer.py:134] - Analyzing 4 picks from 4 sources
+2025-11-05 20:56:29,134 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 20:56:29,134 - sports_betting - INFO - [main.py:96] - Generating recommendations...
+2025-11-05 20:56:29,135 - sports_betting - INFO - [main.py:129] - Results saved to prediction_results.json
+2025-11-05 21:11:53,353 - sports_betting - INFO - [main.py:50] - Initializing services...
+2025-11-05 21:11:53,353 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:11:53,353 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:11:53,353 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:11:53,354 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:11:53,354 - sports_betting - INFO - [main.py:64] - Validating teams: Real Madrid vs Barcelona
+2025-11-05 21:11:53,354 - sports_betting - INFO - [main.py:74] - Retrieving match information...
+2025-11-05 21:11:53,354 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Madrid vs Barcelona
+2025-11-05 21:11:53,354 - sports_betting - INFO - [main.py:79] - Scraping predictions from websites...
+2025-11-05 21:11:53,354 - sports_betting - INFO - [prediction_service_real.py:36] - Scraping REAL predictions for Real Madrid vs Barcelona
+2025-11-05 21:11:53,354 - sports_betting - INFO - [prediction_service_real.py:56] - Scraping sportsgambler.com for Real Madrid vs Barcelona
+2025-11-05 21:11:55,640 - sports_betting - INFO - [prediction_service_real.py:81] - Scraping sportsmole.com for Real Madrid vs Barcelona
+2025-11-05 21:11:56,659 - sports_betting - INFO - [prediction_service_real.py:98] - ✅ sportsmole.co.uk: Barcelona
+2025-11-05 21:11:57,660 - sports_betting - INFO - [prediction_service_real.py:105] - Scraping footballpredictions.net for Real Madrid vs Barcelona
+2025-11-05 21:12:30,204 - sports_betting - WARNING - [prediction_service_real.py:124] - ❌ Failed to scrape footballpredictions.net: HTTPSConnectionPool(host='footballpredictions.net', port=443): Read timed out. (read timeout=10)
+2025-11-05 21:12:31,204 - sports_betting - INFO - [prediction_service_real.py:129] - Scraping sportytrader.com for Real Madrid vs Barcelona
+2025-11-05 21:12:31,610 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 1 predictions from 1 sources
+2025-11-05 21:12:31,610 - sports_betting - INFO - [main.py:85] - Calculating consensus...
+2025-11-05 21:12:31,645 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 1 predictions
+2025-11-05 21:12:31,645 - sports_betting - INFO - [analyzer.py:134] - Analyzing 1 picks from 1 sources
+2025-11-05 21:12:31,646 - sports_betting - INFO - [analyzer.py:155] - Generated 1 consensus picks
+2025-11-05 21:12:31,646 - sports_betting - INFO - [main.py:97] - Generating recommendations...
+2025-11-05 21:12:31,647 - sports_betting - INFO - [main.py:130] - Results saved to prediction_results.json
+2025-11-05 21:13:32,180 - sports_betting - WARNING - [supabase_service.py:24] - Supabase not installed. Install with: pip install supabase
+2025-11-05 21:13:32,180 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:13:32,180 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:13:32,181 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:13:32,181 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:13:32,181 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:13:32,181 - sports_betting - INFO - [main.py:65] - Validating teams: Betis vs Lyon
+2025-11-05 21:13:32,181 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:13:32,182 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Betis vs Lyon
+2025-11-05 21:13:32,182 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:13:32,182 - sports_betting - INFO - [prediction_service_real.py:36] - Scraping REAL predictions for Betis vs Lyon
+2025-11-05 21:13:32,182 - sports_betting - INFO - [prediction_service_real.py:56] - Scraping sportsgambler.com for Betis vs Lyon
+2025-11-05 21:13:33,207 - sports_betting - INFO - [prediction_service_real.py:74] - ✅ sportsgambler.com: Betis
+2025-11-05 21:13:34,208 - sports_betting - INFO - [prediction_service_real.py:81] - Scraping sportsmole.com for Betis vs Lyon
+2025-11-05 21:13:35,070 - sports_betting - INFO - [prediction_service_real.py:98] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:13:36,071 - sports_betting - INFO - [prediction_service_real.py:105] - Scraping footballpredictions.net for Betis vs Lyon
+2025-11-05 21:13:38,026 - sports_betting - INFO - [prediction_service_real.py:129] - Scraping sportytrader.com for Betis vs Lyon
+2025-11-05 21:13:38,374 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 2 predictions from 2 sources
+2025-11-05 21:13:38,374 - sports_betting - INFO - [main.py:86] - Calculating consensus...
+2025-11-05 21:13:38,374 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 2 predictions
+2025-11-05 21:13:38,374 - sports_betting - INFO - [analyzer.py:134] - Analyzing 2 picks from 2 sources
+2025-11-05 21:13:38,374 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 21:13:38,375 - sports_betting - INFO - [main.py:98] - Generating recommendations...
+2025-11-05 21:13:38,375 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:13:38,375 - sports_betting - INFO - [main.py:136] - Results saved to prediction_results.json
+2025-11-05 21:30:30,796 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:30:30,796 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:30:30,796 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:30:30,797 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:30:30,797 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:30:30,797 - sports_betting - INFO - [main.py:65] - Validating teams: Betis vs Lyon
+2025-11-05 21:30:30,797 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:30:30,797 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Betis vs Lyon
+2025-11-05 21:30:30,797 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:30:30,797 - sports_betting - INFO - [prediction_service_real.py:37] - Scraping REAL predictions for Betis vs Lyon
+2025-11-05 21:30:31,241 - sports_betting - INFO - [prediction_service_real.py:107] - ✅ sportsgambler.com: Betis
+2025-11-05 21:30:32,843 - sports_betting - INFO - [prediction_service_real.py:124] - ✅ sportsmole.co.uk: Betis
+2025-11-05 21:30:36,195 - sports_betting - INFO - [prediction_service_real.py:158] - ✅ mightytips.com: Draw
+2025-11-05 21:30:37,983 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 3 predictions from 3 sources
+2025-11-05 21:30:37,983 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:30:38,018 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:30:38,018 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:30:38,018 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 21:30:38,019 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:30:38,020 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:30:38,020 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:30:54,676 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:30:54,676 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:30:54,676 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:30:54,677 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:30:54,677 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:30:54,677 - sports_betting - INFO - [main.py:65] - Validating teams: Manchester United vs Liverpool
+2025-11-05 21:30:54,677 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:30:54,677 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Manchester United vs Liverpool
+2025-11-05 21:30:54,677 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:30:54,677 - sports_betting - INFO - [prediction_service_real.py:37] - Scraping REAL predictions for Manchester United vs Liverpool
+2025-11-05 21:30:57,759 - sports_betting - INFO - [prediction_service_real.py:124] - ✅ sportsmole.co.uk: Manchester United
+2025-11-05 21:31:01,506 - sports_betting - INFO - [prediction_service_real.py:158] - ✅ mightytips.com: Draw
+2025-11-05 21:31:03,484 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 2 predictions from 2 sources
+2025-11-05 21:31:03,485 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:31:03,519 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 2 predictions
+2025-11-05 21:31:03,520 - sports_betting - INFO - [analyzer.py:134] - Analyzing 2 picks from 2 sources
+2025-11-05 21:31:03,520 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 21:31:03,520 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:31:03,521 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:31:03,522 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:31:28,436 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:31:28,436 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:31:28,437 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:31:28,437 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:31:28,437 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:31:28,437 - sports_betting - INFO - [main.py:65] - Validating teams: Arsenal vs Chelsea
+2025-11-05 21:31:28,437 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:31:28,437 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Arsenal vs Chelsea
+2025-11-05 21:31:28,437 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:31:28,438 - sports_betting - INFO - [prediction_service_real.py:37] - Scraping REAL predictions for Arsenal vs Chelsea
+2025-11-05 21:31:31,546 - sports_betting - INFO - [prediction_service_real.py:124] - ✅ sportsmole.co.uk: Arsenal
+2025-11-05 21:31:34,982 - sports_betting - INFO - [prediction_service_real.py:158] - ✅ mightytips.com: Draw
+2025-11-05 21:31:36,666 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 2 predictions from 2 sources
+2025-11-05 21:31:36,667 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:31:36,667 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 2 predictions
+2025-11-05 21:31:36,667 - sports_betting - INFO - [analyzer.py:134] - Analyzing 2 picks from 2 sources
+2025-11-05 21:31:36,668 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 21:31:36,668 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:31:36,669 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:31:36,669 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:32:39,391 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:32:39,391 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:32:39,391 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:32:39,392 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:32:39,392 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:32:39,392 - sports_betting - INFO - [main.py:65] - Validating teams: Real Madrid vs Barcelona
+2025-11-05 21:32:39,392 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:32:39,392 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Madrid vs Barcelona
+2025-11-05 21:32:39,392 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:32:39,393 - sports_betting - INFO - [prediction_service_real.py:37] - Scraping REAL predictions for Real Madrid vs Barcelona
+2025-11-05 21:32:41,408 - sports_betting - INFO - [prediction_service_real.py:124] - ✅ sportsmole.co.uk: Real Madrid
+2025-11-05 21:32:45,240 - sports_betting - INFO - [prediction_service_real.py:158] - ✅ mightytips.com: Draw
+2025-11-05 21:32:46,988 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 2 predictions from 2 sources
+2025-11-05 21:32:46,988 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:32:47,023 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 2 predictions
+2025-11-05 21:32:47,023 - sports_betting - INFO - [analyzer.py:134] - Analyzing 2 picks from 2 sources
+2025-11-05 21:32:47,023 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 21:32:47,024 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:32:47,025 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:32:47,025 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:35:59,019 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:35:59,019 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:35:59,020 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:35:59,020 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:35:59,020 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:35:59,020 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:36:22,894 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:36:22,894 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:36:22,895 - sports_betting - INFO - [prediction_service_real.py:25] - Initialized RealPredictionService - scraping REAL websites
+2025-11-05 21:36:22,895 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:36:22,895 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:36:22,895 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:36:22,895 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:36:22,895 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:36:22,896 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:36:22,896 - sports_betting - INFO - [prediction_service_real.py:37] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:36:23,759 - sports_betting - INFO - [prediction_service_real.py:107] - ✅ sportsgambler.com: Real Betis
+2025-11-05 21:36:25,271 - sports_betting - INFO - [prediction_service_real.py:124] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:36:29,090 - sports_betting - INFO - [prediction_service_real.py:158] - ✅ mightytips.com: Draw
+2025-11-05 21:36:30,794 - sports_betting - INFO - [prediction_service_real.py:50] - Scraped 3 predictions from 3 sources
+2025-11-05 21:36:30,794 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:36:30,795 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:36:30,795 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:36:30,795 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 21:36:30,795 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:36:30,796 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:36:30,797 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:44:33,642 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:44:33,642 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:44:33,642 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:44:33,642 - sports_betting - ERROR - [main.py:159] - Error: Client.__init__() got an unexpected keyword argument 'proxies'
+Traceback (most recent call last):
+  File "/home/iscjmz/auto/main.py", line 154, in <module>
+    main()
+  File "/home/iscjmz/auto/main.py", line 53, in main
+    prediction_service = RealPredictionService()
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iscjmz/auto/services/prediction_service_real.py", line 35, in __init__
+    self.client = Anthropic()
+                  ^^^^^^^^^^^
+  File "/home/iscjmz/auto/venv/lib/python3.12/site-packages/anthropic/_client.py", line 111, in __init__
+    super().__init__(
+  File "/home/iscjmz/auto/venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 738, in __init__
+    self._client = http_client or httpx.Client(
+                                  ^^^^^^^^^^^^^
+TypeError: Client.__init__() got an unexpected keyword argument 'proxies'
+2025-11-05 21:44:44,578 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:44:44,579 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:44:44,579 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:44:44,659 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:44:44,659 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:44:44,659 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:44:44,659 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:44:44,659 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:44:44,659 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:44:44,659 - sports_betting - INFO - [prediction_service_real.py:41] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:44:44,836 - sports_betting - WARNING - [prediction_service_real.py:124] - Error extracting prediction from sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2025-11-05 21:44:47,258 - sports_betting - WARNING - [prediction_service_real.py:124] - Error extracting prediction from sportsmole.co.uk: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2025-11-05 21:44:51,110 - sports_betting - WARNING - [prediction_service_real.py:124] - Error extracting prediction from mightytips.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2025-11-05 21:44:52,831 - sports_betting - INFO - [prediction_service_real.py:54] - Scraped 0 predictions from 0 sources
+2025-11-05 21:44:52,831 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:44:52,831 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 0 predictions
+2025-11-05 21:44:52,831 - sports_betting - WARNING - [analyzer.py:127] - No picks provided for analysis
+2025-11-05 21:46:11,412 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:46:11,412 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:46:11,412 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:46:11,491 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:46:11,492 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:46:11,492 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:46:11,492 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:46:11,492 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:46:11,492 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:46:11,492 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:46:11,864 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 21:46:11,864 - sports_betting - INFO - [prediction_service_real.py:188] - ✅ sportsgambler.com: Real Betis
+2025-11-05 21:46:13,352 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:46:17,374 - sports_betting - INFO - [prediction_service_real.py:239] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 21:46:19,050 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 3 predictions from 3 sources
+2025-11-05 21:46:19,050 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:46:19,050 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:46:19,050 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:46:19,050 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 21:46:19,050 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:46:19,051 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:46:19,051 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:46:47,580 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:46:47,580 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:46:47,580 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:46:47,660 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:46:47,660 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:46:47,660 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:46:47,660 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:46:47,660 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:46:47,660 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:46:47,660 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:46:48,137 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 21:46:48,137 - sports_betting - INFO - [prediction_service_real.py:188] - ✅ sportsgambler.com: Real Betis
+2025-11-05 21:46:50,055 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:46:53,360 - sports_betting - INFO - [prediction_service_real.py:239] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 21:46:54,813 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 3 predictions from 3 sources
+2025-11-05 21:46:54,813 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:46:54,814 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:46:54,814 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:46:54,814 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 21:46:54,814 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:46:54,815 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:46:54,815 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:47:07,124 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:47:07,124 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:47:07,124 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:47:07,206 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:47:07,206 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:47:07,206 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:47:07,206 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:47:07,206 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:47:07,206 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:47:07,206 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:47:07,379 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 21:47:07,380 - sports_betting - INFO - [prediction_service_real.py:188] - ✅ sportsgambler.com: Real Betis
+2025-11-05 21:47:10,375 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:47:13,868 - sports_betting - INFO - [prediction_service_real.py:239] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 21:47:15,371 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 3 predictions from 3 sources
+2025-11-05 21:47:15,371 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:47:15,371 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:47:15,372 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:47:15,372 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 21:47:15,372 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:47:15,373 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:47:15,373 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:47:50,552 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:47:50,553 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:47:50,553 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:47:50,633 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:47:50,633 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:47:50,633 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:47:50,633 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:47:50,633 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:47:50,633 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:47:50,633 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:47:50,847 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 21:47:50,848 - sports_betting - INFO - [prediction_service_real.py:188] - ✅ sportsgambler.com: Real Betis
+2025-11-05 21:47:52,965 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:47:54,045 - sports_betting - WARNING - [prediction_service_real.py:224] - ❌ sportskeeda.com: HTTP 404
+2025-11-05 21:47:56,295 - sports_betting - INFO - [prediction_service_real.py:242] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 21:47:58,005 - sports_betting - WARNING - [prediction_service_real.py:261] - ❌ footballpredictions.com: HTTP 404
+2025-11-05 21:47:58,005 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 3 predictions from 3 sources
+2025-11-05 21:47:58,005 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:47:58,005 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:47:58,005 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:47:58,005 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 21:47:58,006 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:47:58,006 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:47:58,006 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:48:30,687 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:48:30,687 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:48:30,687 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:48:30,766 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:48:30,766 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:48:30,766 - sports_betting - INFO - [main.py:65] - Validating teams: Real Betis vs Lyon
+2025-11-05 21:48:30,766 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:48:30,766 - sports_betting - INFO - [match_service.py:137] - Fetched real odds for Real Betis vs Lyon
+2025-11-05 21:48:30,766 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:48:30,767 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Real Betis vs Lyon
+2025-11-05 21:48:32,119 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 21:48:32,120 - sports_betting - INFO - [prediction_service_real.py:188] - ✅ sportsgambler.com: Real Betis
+2025-11-05 21:48:33,973 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Lyon
+2025-11-05 21:48:35,773 - sports_betting - WARNING - [prediction_service_real.py:235] - ❌ sportskeeda.com: No valid URL found
+2025-11-05 21:48:37,936 - sports_betting - INFO - [prediction_service_real.py:253] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 21:48:41,795 - sports_betting - WARNING - [prediction_service_real.py:283] - ❌ footballpredictions.com: No valid URL found
+2025-11-05 21:48:41,795 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 3 predictions from 3 sources
+2025-11-05 21:48:41,795 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:48:41,795 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:48:41,795 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:48:41,796 - sports_betting - INFO - [analyzer.py:155] - Generated 3 consensus picks
+2025-11-05 21:48:41,796 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:48:41,796 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:48:41,796 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 21:52:40,691 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:52:40,691 - sports_betting - INFO - [match_service.py:74] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:52:40,701 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:52:40,789 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:52:40,789 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:52:40,789 - sports_betting - INFO - [main.py:65] - Validating teams: Roma vs Rangers
+2025-11-05 21:54:05,189 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 21:54:05,190 - sports_betting - INFO - [match_service.py:75] - Initialized MatchService with REAL DATA integration
+2025-11-05 21:54:05,190 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 21:54:05,276 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 21:54:05,276 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 21:54:05,276 - sports_betting - INFO - [main.py:65] - Validating teams: Roma vs Rangers
+2025-11-05 21:54:05,276 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 21:54:05,276 - sports_betting - INFO - [match_service.py:138] - Fetched real odds for Roma vs Rangers
+2025-11-05 21:54:05,277 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 21:54:05,277 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Roma vs Rangers
+2025-11-05 21:54:06,224 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 21:54:06,225 - sports_betting - INFO - [prediction_service_real.py:188] - ✅ sportsgambler.com: Roma
+2025-11-05 21:54:08,515 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Roma
+2025-11-05 21:54:10,607 - sports_betting - WARNING - [prediction_service_real.py:235] - ❌ sportskeeda.com: No valid URL found
+2025-11-05 21:54:13,016 - sports_betting - INFO - [prediction_service_real.py:253] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 21:54:16,785 - sports_betting - WARNING - [prediction_service_real.py:283] - ❌ footballpredictions.com: No valid URL found
+2025-11-05 21:54:16,785 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 3 predictions from 3 sources
+2025-11-05 21:54:16,785 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 21:54:16,786 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 3 predictions
+2025-11-05 21:54:16,786 - sports_betting - INFO - [analyzer.py:134] - Analyzing 3 picks from 3 sources
+2025-11-05 21:54:16,786 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 21:54:16,786 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 21:54:16,788 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 21:54:16,788 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json
+2025-11-05 22:03:41,772 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 22:03:41,773 - sports_betting - INFO - [match_service.py:75] - Initialized MatchService with REAL DATA integration
+2025-11-05 22:03:41,773 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 22:03:41,861 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 22:03:41,861 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 22:03:41,861 - sports_betting - INFO - [main.py:65] - Validating teams: Celta Vigo vs Dinamo Zagreb
+2025-11-05 22:03:58,904 - sports_betting - INFO - [main.py:51] - Initializing services...
+2025-11-05 22:03:58,904 - sports_betting - INFO - [match_service.py:76] - Initialized MatchService with REAL DATA integration
+2025-11-05 22:03:58,904 - sports_betting - INFO - [prediction_service_real.py:28] - Initialized RealPredictionService - scraping REAL websites with AI interpretation
+2025-11-05 22:03:58,991 - sports_betting - INFO - [consensus_service.py:63] - Initialized ConsensusService
+2025-11-05 22:03:58,991 - sports_betting - INFO - [analyzer.py:96] - Initialized ConsensusAnalyzer (min_frequency=1)
+2025-11-05 22:03:58,991 - sports_betting - INFO - [main.py:65] - Validating teams: Celta Vigo vs Dinamo Zagreb
+2025-11-05 22:03:58,991 - sports_betting - INFO - [main.py:75] - Retrieving match information...
+2025-11-05 22:03:58,991 - sports_betting - INFO - [match_service.py:139] - Fetched real odds for Celta Vigo vs Dinamo Zagreb
+2025-11-05 22:03:58,991 - sports_betting - INFO - [main.py:80] - Scraping predictions from websites...
+2025-11-05 22:03:58,991 - sports_betting - INFO - [prediction_service_real.py:47] - Scraping REAL predictions for Celta Vigo vs Dinamo Zagreb
+2025-11-05 22:03:59,952 - sports_betting - WARNING - [prediction_service_real.py:122] - Claude error for sportsgambler.com: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using fallback.
+2025-11-05 22:04:01,428 - sports_betting - INFO - [prediction_service_real.py:205] - ✅ sportsmole.co.uk: Celta Vigo
+2025-11-05 22:04:03,442 - sports_betting - WARNING - [prediction_service_real.py:235] - ❌ sportskeeda.com: No valid URL found
+2025-11-05 22:04:05,689 - sports_betting - INFO - [prediction_service_real.py:253] - ✅ mightytips.com: Both Teams to Score
+2025-11-05 22:04:09,756 - sports_betting - WARNING - [prediction_service_real.py:283] - ❌ footballpredictions.com: No valid URL found
+2025-11-05 22:04:09,757 - sports_betting - INFO - [prediction_service_real.py:60] - Scraped 2 predictions from 2 sources
+2025-11-05 22:04:09,757 - sports_betting - INFO - [main.py:98] - Calculating consensus...
+2025-11-05 22:04:09,757 - sports_betting - INFO - [consensus_service.py:77] - Calculating consensus from 2 predictions
+2025-11-05 22:04:09,757 - sports_betting - INFO - [analyzer.py:134] - Analyzing 2 picks from 2 sources
+2025-11-05 22:04:09,757 - sports_betting - INFO - [analyzer.py:155] - Generated 2 consensus picks
+2025-11-05 22:04:09,757 - sports_betting - INFO - [main.py:110] - Generating recommendations...
+2025-11-05 22:04:09,758 - sports_betting - INFO - [supabase_service.py:40] - ⚠️ Supabase not configured. Set SUPABASE_KEY environment variable.
+2025-11-05 22:04:09,758 - sports_betting - INFO - [main.py:148] - Results saved to prediction_results.json

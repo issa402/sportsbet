@@ -1,0 +1,52 @@
+{
+  "match": {
+    "team_a": "Celta Vigo",
+    "team_b": "Dinamo Zagreb",
+    "odds": {
+      "team_a": 2.67,
+      "draw": 4.0,
+      "team_b": 2.67,
+      "source": "Calculated from team strength"
+    }
+  },
+  "prediction": {
+    "team": "celta vigo",
+    "consensus_score": 0.72,
+    "votes": 1,
+    "sources": [
+      "sportsmole.co.uk"
+    ],
+    "confidence": 0.9
+  },
+  "recommendation": {
+    "level": "BUY",
+    "emoji": "\u26a1",
+    "action": "Consider placing bet",
+    "confidence": "High"
+  },
+  "all_predictions": [
+    {
+      "team_or_player": "Celta Vigo",
+      "pick_type": "moneyline",
+      "confidence": "high",
+      "odds": null,
+      "reasoning": "sportsmole.co.uk prediction favors Celta Vigo",
+      "source": "sportsmole.co.uk",
+      "article_id": null,
+      "extracted_at": "2025-11-05T22:04:01.428219"
+    },
+    {
+      "team_or_player": "Both Teams to Score",
+      "pick_type": "moneyline",
+      "confidence": "medium",
+      "odds": null,
+      "reasoning": "mightytips.com suggests both teams will score",
+      "source": "mightytips.com",
+      "article_id": null,
+      "extracted_at": "2025-11-05T22:04:05.689889"
+    }
+  ],
+  "reasoning": [
+    "sportsmole.co.uk prediction favors Celta Vigo"
+  ]
+}

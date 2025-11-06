@@ -1,0 +1,48 @@
+# Sports Betting Sources Configuration
+
+sources:
+  espn:
+    name: "ESPN"
+    base_url: "https://www.espn.com"
+    endpoints:
+      - path: "/nfl/picks"
+        sport: "nfl"
+      - path: "/nba/picks"
+        sport: "nba"
+      - path: "/mlb/picks"
+        sport: "mlb"
+      - path: "/nhl/picks"
+        sport: "nhl"
+    selectors:
+      article: "article"
+      title: "h2"
+      content: "p"
+    enabled: true
+    priority: 1
+
+  bleacher_report:
+    name: "Bleacher Report"
+    base_url: "https://bleacherreport.com"
+    endpoints:
+      - path: "/articles"
+        sport: "all"
+    selectors:
+      article: "div.article"
+      title: "h3"
+      content: "div.article-content"
+    enabled: true
+    priority: 2
+
+  the_athletic:
+    name: "The Athletic"
+    base_url: "https://theathletic.com"
+    endpoints:
+      - path: "/picks"
+        sport: "all"
+    selectors:
+      article: "article"
+      title: "h2"
+      content: "div.article-body"
+    enabled: false
+    priority: 3
+
