@@ -28,21 +28,21 @@ def setup_logging():
     )
     console_handler.setFormatter(console_formatter)
     
-    # File handler
-    file_handler = logging.handlers.RotatingFileHandler(
-        log_dir / "sports_betting.log",
-        maxBytes=10485760,  # 10MB
-        backupCount=5
-    )
-    file_handler.setLevel(logging.DEBUG)
-    file_formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s'
-    )
-    file_handler.setFormatter(file_formatter)
-    
-    # Add handlers
+    # File handler - DISABLED to save memory
+    # file_handler = logging.handlers.RotatingFileHandler(
+    #     log_dir / "sports_betting.log",
+    #     maxBytes=10485760,  # 10MB
+    #     backupCount=5
+    # )
+    # file_handler.setLevel(logging.DEBUG)
+    # file_formatter = logging.Formatter(
+    #     '%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s'
+    # )
+    # file_handler.setFormatter(file_formatter)
+
+    # Add handlers (console only)
     logger.addHandler(console_handler)
-    logger.addHandler(file_handler)
+    # logger.addHandler(file_handler)
     
     return logger
 
