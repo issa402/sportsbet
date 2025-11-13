@@ -59,6 +59,7 @@ This project demonstrates key CS439 concepts:
 - Extract team form data (last 5 matches for each team)
 - Collect head-to-head match history between teams
 - Gather team statistics (wins, draws, losses, win percentage)
+- Track home/away performance (how teams play at home vs away)
 - Implement data quality checks for historical data
 
 ### Data Storage and Organization
@@ -69,11 +70,13 @@ This project demonstrates key CS439 concepts:
 - Implement data validation rules and constraints
 - Create data archival procedures for historical matches
 
-**B. Feature Engineering:**
-- Extract team form percentage (wins/total matches)
-- Calculate head-to-head advantage metrics
-- Compute prediction consensus scores (votes/total sources)
-- Calculate source reliability weights from historical data
+**B. Feature Engineering (6 Features):**
+1. **Team A Form:** Win percentage from last 5 matches
+2. **Team B Form:** Win percentage from last 5 matches
+3. **Head-to-Head:** Team A win percentage vs Team B (last 5 matches)
+4. **Source Predictions:** Consensus from 3 websites (votes/total sources)
+5. **Source Accuracy:** How accurate each source is for that specific team
+6. **Home/Away Stats:** How teams perform at home vs away (win percentages)
 - Normalize and scale features for ML models
 
 ### Machine Learning Models and Techniques
