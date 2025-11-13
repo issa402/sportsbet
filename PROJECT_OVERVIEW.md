@@ -27,7 +27,7 @@
 
 ### Step 1: Data Collection
 ```
-Real Betis vs Celta Vigo
+Real Betis (HOME) vs Celta Vigo (AWAY)
 
 Sportsmole predicts: "Real Betis Win"
 Sky Sports predicts: "Real Betis Win"
@@ -47,6 +47,19 @@ Celta Vigo (Last 5 Matches):
   - Sportsmole: 70% accurate
   - Sky Sports: 90% accurate
   - Pro Soccer Wire: 50% accurate
+```
+
+### Step 2.5: Track Home/Away Performance
+```
+Real Betis:
+  - At HOME: 60% win rate (3/5)
+  - AWAY: 40% win rate (2/5)
+
+Celta Vigo:
+  - At HOME: 40% win rate (2/5)
+  - AWAY: 20% win rate (1/5)
+
+Real Betis is playing at HOME → Better chance to win!
 ```
 
 ### Step 3: Apply Bayesian Weighting
@@ -85,6 +98,17 @@ Ensemble + ML models: 75-80% accuracy ← BEST!
 
 ---
 
+## 6 Features We Use
+
+| Feature | What It Is | Example |
+|---------|-----------|---------|
+| **Team A Form** | Win % from last 5 matches | Real Betis: 60% (3/5) |
+| **Team B Form** | Win % from last 5 matches | Celta Vigo: 40% (2/5) |
+| **Head-to-Head** | Team A win % vs Team B | Real Betis: 80% (4/5) |
+| **Source Predictions** | Consensus from 3 websites | 2/3 say Real Betis Win |
+| **Source Accuracy** | How accurate each source is for that team | Sky Sports: 100% for Real Betis |
+| **Home/Away Stats** | How teams play at home vs away | Real Betis: 60% home, 40% away |
+
 ## CS439 Concepts Used
 
 | Concept | How We Use It |
@@ -94,7 +118,7 @@ Ensemble + ML models: 75-80% accuracy ← BEST!
 | **Logistic Regression** | Binary classification (team wins or not) |
 | **Linear Regression** | Predict exact match scores |
 | **Gradient Descent** | Train models to minimize error |
-| **Feature Engineering** | Extract team form, H2H, consensus scores |
+| **Feature Engineering** | Extract team form, H2H, consensus scores, home/away |
 | **Model Evaluation** | Accuracy, precision, recall, R² |
 | **Train/Test Split** | 80% training, 20% testing |
 

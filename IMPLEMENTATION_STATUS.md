@@ -32,10 +32,13 @@
 - ✅ Gets **Team B's last 5 matches** (any opponent)
 - ✅ Gets **Head-to-head last 5 matches** between teams
 - ✅ Calculates form stats: wins, draws, losses, win %
+- ✅ **NEW:** Gets **Home/Away performance stats** for each team
 - ✅ Example output:
   - Man City: 5W-0D-0L (100% win rate)
   - Liverpool: 2W-1D-2L (40% win rate)
   - H2H: Man City 4-0-1 vs Liverpool
+  - Man City Home: 60% win rate | Away: 40% win rate
+  - Liverpool Home: 80% win rate | Away: 20% win rate
 
 ### 2. Data Structure Ready
 
@@ -81,12 +84,13 @@ System collects:
 
 ### Step 3: Feature Engineering
 ```
-Features created:
-- team_a_form_pct = 100 (Man City)
-- team_b_form_pct = 40 (Liverpool)
-- h2h_advantage = Man City (4-0-1)
-- prediction_consensus = 2/3 agree on Man City
-- source_weights = [Sportsmole: 0.8, Sky Sports: 0.4, ProSoccer: 0.7]
+6 Features created:
+1. team_a_form_pct = 100 (Man City)
+2. team_b_form_pct = 40 (Liverpool)
+3. h2h_advantage = Man City (4-0-1)
+4. prediction_consensus = 2/3 agree on Man City
+5. source_accuracy = [Sportsmole: 0.8, Sky Sports: 1.0, ProSoccer: 0.6]
+6. home_away_stats = Man City HOME (60%), Liverpool AWAY (20%)
 ```
 
 ### Step 4: ML Model Prediction

@@ -22,10 +22,40 @@ class HistoricalDataService:
         self.cache = {}
         self.flashscore_url = "https://www.flashscore.com/football/"
 
+        # Home/away performance stats for each team
+        self.home_away_stats = self._initialize_home_away_stats()
+
         # Source prediction accuracy for last 5 matches per team
         # Format: {(source, team): [list of correct predictions]}
         self.source_accuracy_data = self._initialize_source_accuracy()
     
+    def _initialize_home_away_stats(self) -> Dict:
+        """Initialize home/away performance stats for each team
+
+        Format: {team_name: {
+            'home': {'wins': 3, 'draws': 1, 'losses': 1, 'win_percentage': 60.0},
+            'away': {'wins': 2, 'draws': 0, 'losses': 3, 'win_percentage': 40.0}
+        }}
+        """
+        return {
+            "manchester city": {
+                "home": {"wins": 3, "draws": 1, "losses": 1, "win_percentage": 60.0},
+                "away": {"wins": 2, "draws": 0, "losses": 3, "win_percentage": 40.0}
+            },
+            "liverpool": {
+                "home": {"wins": 4, "draws": 0, "losses": 1, "win_percentage": 80.0},
+                "away": {"wins": 1, "draws": 1, "losses": 3, "win_percentage": 20.0}
+            },
+            "real betis": {
+                "home": {"wins": 3, "draws": 1, "losses": 1, "win_percentage": 60.0},
+                "away": {"wins": 2, "draws": 0, "losses": 3, "win_percentage": 40.0}
+            },
+            "celta vigo": {
+                "home": {"wins": 2, "draws": 1, "losses": 2, "win_percentage": 40.0},
+                "away": {"wins": 1, "draws": 1, "losses": 3, "win_percentage": 20.0}
+            }
+        }
+
     def _initialize_source_accuracy(self) -> Dict:
         """Initialize source prediction accuracy for each team's last 5 matches
 
@@ -233,9 +263,50 @@ class HistoricalDataService:
         accuracies.sort(key=lambda x: x["accuracy_percentage"], reverse=True)
         return accuracies
 
-    def extract_features(self, team_a: str, team_b: str) -> Dict:
-        """Extract features for ML model - gets last 5 matches for each team + H2H + source accuracy"""
+    def get_home_away_stats(self, team_name: str) -> Dict:
+        """Get home and away performance stats for a team
+
+        Returns: {
+            'team': 'Manchester City',
+            'home': {'wins': 3, 'draws': 1, 'losses': 1, 'win_percentage': 60.0},
+            'away': {'wins': 2, 'draws': 0, 'losses': 3, 'win_percentage': 40.0}
+        }
+        """
+        team_key = team_name.lower()
+        stats = self.home_away_stats.get(team_key)
+
+        if stats:
+            return {
+                "team": team_name,
+                "home": stats["home"],
+                "away": stats["away"]
+            }
+        else:
+            # Return default if no data found
+            return {
+                "team": team_name,
+                "home": {"wins": 0, "draws": 0, "losses": 0, "win_percentage": 0.0},
+                "away": {"wins": 0, "draws": 0, "losses": 0, "win_percentage": 0.0}
+            }
+
+    def extract_features(self, team_a: str, team_b: str, team_a_is_home: bool = True) -> Dict:
+        """Extract features for ML model
+
+        Features:
+        1. Team A form (win %)
+        2. Team B form (win %)
+        3. Head-to-head (Team A win %)
+        4. Source predictions (consensus)
+        5. Source accuracy (weighted)
+        6. Home/Away stats (how teams play at home vs away)
+
+        Args:
+            team_a: First team name
+            team_b: Second team name
+            team_a_is_home: True if team_a is playing at home, False if away
+        """
         print(f"\n📊 Extracting features for {team_a} vs {team_b}...")
+        print(f"   {team_a} is {'HOME' if team_a_is_home else 'AWAY'}")
 
         # Get last 5 matches for each team
         form_a = self.get_team_matches(team_a, limit=5)
@@ -247,6 +318,10 @@ class HistoricalDataService:
         # Get source accuracy for each team
         source_accuracy_a = self.get_all_sources_accuracy_for_team(team_a)
         source_accuracy_b = self.get_all_sources_accuracy_for_team(team_b)
+
+        # Get home/away stats for each team
+        home_away_a = self.get_home_away_stats(team_a)
+        home_away_b = self.get_home_away_stats(team_b)
 
         # Calculate stats
         team_a_wins = sum(1 for m in form_a if m.get('result') == 'W')
@@ -260,6 +335,7 @@ class HistoricalDataService:
         features = {
             "team_a": team_a,
             "team_b": team_b,
+            "team_a_is_home": team_a_is_home,
             "team_a_last_5_matches": form_a,
             "team_b_last_5_matches": form_b,
             "head_to_head_last_5": h2h,
@@ -277,6 +353,8 @@ class HistoricalDataService:
             },
             "team_a_source_accuracy": source_accuracy_a,
             "team_b_source_accuracy": source_accuracy_b,
+            "team_a_home_away": home_away_a,
+            "team_b_home_away": home_away_b,
         }
 
         return features
@@ -286,19 +364,27 @@ if __name__ == "__main__":
     service = HistoricalDataService()
 
     print("=" * 80)
-    print("TESTING REAL-TIME HISTORICAL DATA SERVICE WITH SOURCE ACCURACY")
+    print("TESTING HISTORICAL DATA SERVICE WITH HOME/AWAY STATS")
     print("=" * 80)
 
-    # Extract features (gets last 5 matches for each team + H2H + source accuracy)
-    print("\n📊 EXTRACTING FEATURES FOR MAN CITY VS LIVERPOOL")
-    features = service.extract_features("Manchester City", "Liverpool")
+    # Extract features (gets last 5 matches + H2H + source accuracy + home/away stats)
+    print("\n📊 EXTRACTING FEATURES FOR MAN CITY (HOME) VS LIVERPOOL (AWAY)")
+    features = service.extract_features("Manchester City", "Liverpool", team_a_is_home=True)
 
     print("\n✅ FEATURES EXTRACTED:")
-    print(f"  Team A: {features['team_a']}")
-    print(f"  Team B: {features['team_b']}")
+    print(f"  Team A: {features['team_a']} (HOME)")
+    print(f"  Team B: {features['team_b']} (AWAY)")
     print(f"  Team A Stats: {features['team_a_stats']}")
     print(f"  Team B Stats: {features['team_b_stats']}")
     print(f"  Head-to-Head Matches: {len(features['head_to_head_last_5'])}")
+
+    print("\n🏠 HOME/AWAY STATS FOR MANCHESTER CITY:")
+    print(f"  Home: {features['team_a_home_away']['home']}")
+    print(f"  Away: {features['team_a_home_away']['away']}")
+
+    print("\n🏠 HOME/AWAY STATS FOR LIVERPOOL:")
+    print(f"  Home: {features['team_b_home_away']['home']}")
+    print(f"  Away: {features['team_b_home_away']['away']}")
 
     print("\n🎯 SOURCE ACCURACY FOR MANCHESTER CITY (Last 5 Matches):")
     for source_acc in features['team_a_source_accuracy']:
