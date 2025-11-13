@@ -18,7 +18,14 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import time
+import os
+import json
 from anthropic import Anthropic
+try:
+    from groq import Groq
+    HAS_GROQ = True
+except ImportError:
+    HAS_GROQ = False
 
 
 class RealPredictionService:
@@ -32,12 +39,40 @@ class RealPredictionService:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
         self.scraped_data = []
-        # Initialize Claude client - will use API key from environment
+        # Initialize LLM client - supports Groq, OpenRouter, or Anthropic
+        self.client = None
+        self.client_type = None
+        self.has_claude = False
+
         try:
-            self.client = Anthropic()
-            self.has_claude = True
+            # Try Groq first (completely free, no limits)
+            groq_key = os.getenv("GROQ_API_KEY")
+            if groq_key and HAS_GROQ:
+                self.client = Groq(api_key=groq_key)
+                self.client_type = "groq"
+                self.has_claude = True
+                logger.info("Using Groq API (FREE, no limits)")
+            else:
+                # Try OpenRouter
+                openrouter_key = os.getenv("OPENROUTER_API_KEY")
+                if openrouter_key:
+                    self.client = Anthropic(
+                        api_key=openrouter_key,
+                        base_url="https://openrouter.ai/api/v1"
+                    )
+                    self.client_type = "openrouter"
+                    self.has_claude = True
+                    logger.info("Using OpenRouter API")
+                else:
+                    # Try Anthropic direct
+                    anthropic_key = os.getenv("ANTHROPIC_API_KEY")
+                    if anthropic_key:
+                        self.client = Anthropic(api_key=anthropic_key)
+                        self.client_type = "anthropic"
+                        self.has_claude = True
+                        logger.info("Using Anthropic API")
         except Exception as e:
-            logger.warning(f"Claude not available: {e}. Will use basic extraction.")
+            logger.warning(f"LLM not available: {e}. Will use keyword extraction only.")
             self.has_claude = False
 
     def scrape_predictions(self, team_a: str, team_b: str) -> List[BettingPick]:
@@ -69,16 +104,10 @@ class RealPredictionService:
         if not text or len(text.strip()) < 10:
             return None
 
-        # Try Claude first if available
+        # Try LLM first if available
         if self.has_claude:
             try:
-                message = self.client.messages.create(
-                    model="claude-3-5-sonnet-20241022",
-                    max_tokens=500,
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": f"""Analyze this sports prediction website content for {team_a} vs {team_b}.
+                prompt = f"""Analyze this sports prediction website content for {team_a} vs {team_b}.
 
 Website content:
 {text[:2000]}
@@ -89,11 +118,44 @@ Extract the prediction. Return ONLY a JSON object:
 Prediction can be: "{team_a}", "{team_b}", "Draw", "Both Teams to Score", "Under", "Over", or "No Prediction"
 
 Return ONLY JSON, no other text."""
-                        }
-                    ]
-                )
 
-                response_text = message.content[0].text
+                if self.client_type == "groq":
+                    # Use llama-3.3-70b (current Groq model)
+                    message = self.client.chat.completions.create(
+                        model="llama-3.3-70b-versatile",
+                        messages=[{"role": "user", "content": prompt}],
+                        max_tokens=500,
+                        temperature=0.3
+                    )
+                    response_text = message.choices[0].message.content
+                elif self.client_type == "openrouter":
+                    # OpenRouter - use direct HTTP request
+                    import requests
+                    headers = {
+                        "Authorization": f"Bearer {os.getenv('OPENROUTER_API_KEY')}",
+                        "Content-Type": "application/json"
+                    }
+                    data = {
+                        "model": "anthropic/claude-3-5-sonnet",
+                        "messages": [{"role": "user", "content": prompt}],
+                        "max_tokens": 500
+                    }
+                    response = requests.post(
+                        "https://openrouter.ai/api/v1/chat/completions",
+                        headers=headers,
+                        json=data,
+                        timeout=30
+                    )
+                    response.raise_for_status()
+                    response_text = response.json()["choices"][0]["message"]["content"]
+                else:
+                    # Anthropic direct
+                    message = self.client.messages.create(
+                        model="claude-3-5-sonnet-20241022",
+                        max_tokens=500,
+                        messages=[{"role": "user", "content": prompt}]
+                    )
+                    response_text = message.content[0].text
                 prediction_data = json.loads(response_text)
 
                 prediction = prediction_data.get("prediction", "No Prediction")
@@ -111,6 +173,8 @@ Return ONLY JSON, no other text."""
                 }
                 confidence = confidence_map.get(confidence_str, ConfidenceLevel.MEDIUM)
 
+                logger.info(f"✅ {source} (Claude AI): {prediction} ({confidence_str})")
+
                 return BettingPick(
                     team_or_player=prediction,
                     pick_type=PickType.MONEYLINE,
@@ -119,8 +183,9 @@ Return ONLY JSON, no other text."""
                     source=source
                 )
             except Exception as e:
-                logger.warning(f"Claude error for {source}: {e}. Using fallback.")
-                self.has_claude = False
+                logger.warning(f"⚠️  Claude error for {source}: {e}. Using fallback keyword matching.")
+                # Don't disable Claude entirely, just for this request
+                pass
 
         # Fallback: keyword-based extraction
         return self._extract_prediction_fallback(text, team_a, team_b, source)
