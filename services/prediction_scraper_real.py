@@ -22,9 +22,9 @@ import json
 import requests
 import re
 
+
 class PredictionScraperReal:
     """Scrape REAL prediction text from 3 working sites."""
-    
     def __init__(self):
         self.predictions: List[BettingPick] = []
         self.scraped_text = {}
@@ -39,6 +39,7 @@ class PredictionScraperReal:
         except Exception as e:
             logger.warning(f"Groq not available: {e}")
     
+    
     async def get_predictions(self, team_a: str, team_b: str) -> List[BettingPick]:
         """Get predictions from 4 SOCCER prediction sites."""
         self.predictions = []
@@ -48,6 +49,7 @@ class PredictionScraperReal:
         logger.info("=" * 80)
         logger.info("📊 SOURCES: Sportsmole, Eagle Predict, Deepbetting, LeagueLane")
         logger.info("=" * 80)
+
 
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
@@ -69,6 +71,7 @@ class PredictionScraperReal:
         logger.info(f"✅ Total predictions: {len(self.predictions)}")
         return self.predictions
 
+    
     async def get_past_results(self, team_name: str, num_games: int = 5) -> dict:
         """Get past results for a team from Sportsmole."""
         logger.info(f"\n📊 Scraping past {num_games} games for {team_name}")
@@ -119,6 +122,7 @@ Text:
                     logger.info(f"   Groq response: {response_text[:200]}")
                     return {"team": team_name, "results": response_text}
 
+    
             except Exception as e:
                 logger.error(f"   ❌ Error: {e}")
             finally:
@@ -168,6 +172,7 @@ Text:
                 url = f"https://www.sportsmole.co.uk/football/{team_a_slug}/preview/{team_a_slug}-vs-{team_b_slug}-prediction-team-news-lineups.html"
 
             logger.info(f"   Navigating to: {url}")
+        
             await page.goto(url, wait_until="networkidle", timeout=30000)
             await page.wait_for_timeout(3000)
 
@@ -269,7 +274,9 @@ Text:
     async def _scrape_betting_expert(self, browser, team_a: str, team_b: str):
         """Scrape Betting Expert predictions - WORKING SITE."""
         logger.info("\n💡 SOURCE 3: Betting Expert")
+    
         try:
+
             page = await browser.new_page()
             url = "https://www.bettingexpert.com/"
             logger.info(f"   Navigating to: {url}")
@@ -289,6 +296,7 @@ Text:
         except Exception as e:
             logger.error(f"   ❌ Error: {e}")
     
+
     def _extract_with_groq(self, text: str, team_a: str, team_b: str, source: str):
         """Use Groq to extract predictions from text."""
         if not self.client or len(text) < 100:

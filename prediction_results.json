@@ -1,20 +1,20 @@
 {
   "match": {
-    "team_a": "Celta Vigo",
-    "team_b": "Dinamo Zagreb",
+    "team_a": "Real Madrid",
+    "team_b": "Barcelona",
     "odds": {
-      "team_a": 2.67,
+      "team_a": 2.62,
       "draw": 4.0,
-      "team_b": 2.67,
+      "team_b": 2.71,
       "source": "Calculated from team strength"
     }
   },
   "prediction": {
-    "team": "celta vigo",
+    "team": "real madrid",
     "consensus_score": 0.72,
     "votes": 1,
     "sources": [
-      "sportsmole.co.uk"
+      "sportsgambler.com"
     ],
     "confidence": 0.9
   },
@@ -26,14 +26,24 @@
   },
   "all_predictions": [
     {
-      "team_or_player": "Celta Vigo",
+      "team_or_player": "Real Madrid",
       "pick_type": "moneyline",
       "confidence": "high",
       "odds": null,
-      "reasoning": "sportsmole.co.uk prediction favors Celta Vigo",
+      "reasoning": "sportsgambler.com prediction favors Real Madrid",
+      "source": "sportsgambler.com",
+      "article_id": null,
+      "extracted_at": "2025-11-20T10:41:01.078756"
+    },
+    {
+      "team_or_player": "Draw",
+      "pick_type": "moneyline",
+      "confidence": "medium",
+      "odds": null,
+      "reasoning": "sportsmole.co.uk suggests draw is likely",
       "source": "sportsmole.co.uk",
       "article_id": null,
-      "extracted_at": "2025-11-05T22:04:01.428219"
+      "extracted_at": "2025-11-20T10:41:02.759730"
     },
     {
       "team_or_player": "Both Teams to Score",
@@ -43,10 +53,10 @@
       "reasoning": "mightytips.com suggests both teams will score",
       "source": "mightytips.com",
       "article_id": null,
-      "extracted_at": "2025-11-05T22:04:05.689889"
+      "extracted_at": "2025-11-20T10:41:07.365980"
     }
   ],
   "reasoning": [
-    "sportsmole.co.uk prediction favors Celta Vigo"
+    "sportsgambler.com prediction favors Real Madrid"
   ]
 }

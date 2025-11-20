@@ -26,11 +26,13 @@ class ESPNAPIService:
         'ger.1': 'Bundesliga (Germany)',
     }
 
+    
     def __init__(self):
         self.cache = {}
         self.timeout = 10
         self.team_cache = {}  # Cache team IDs to avoid repeated searches
 
+   
     def get_team_last_5_matches(self, team_name: str) -> List[Dict]:
         """
         Get ONLY the last 5 matches for ANY team from ESPN API
