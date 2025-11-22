@@ -18,7 +18,9 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import time
-from anthropic import Anthropic
+import json
+import os
+from groq import Groq
 
 
 class RealPredictionService:
@@ -32,13 +34,19 @@ class RealPredictionService:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
         self.scraped_data = []
-        # Initialize Claude client - will use API key from environment
+        # Initialize Groq client
         try:
-            self.client = Anthropic()
-            self.has_claude = True
+            groq_key = os.getenv("GROQ_API_KEY")
+            if groq_key:
+                self.client = Groq(api_key=groq_key)
+                self.has_groq = True
+                logger.info("✅ Groq API initialized")
+            else:
+                self.has_groq = False
+                logger.warning("Groq API key not found")
         except Exception as e:
-            logger.warning(f"Claude not available: {e}. Will use basic extraction.")
-            self.has_claude = False
+            logger.warning(f"Groq not available: {e}")
+            self.has_groq = False
 
     def scrape_predictions(self, team_a: str, team_b: str) -> List[BettingPick]:
         """Scrape REAL predictions from multiple websites."""
@@ -65,15 +73,15 @@ class RealPredictionService:
         return self.scraped_data
 
     def _extract_prediction(self, text: str, team_a: str, team_b: str, source: str) -> Optional[BettingPick]:
-        """Extract prediction using Claude AI or fallback to keyword matching."""
+        """Extract prediction using Groq AI or fallback to keyword matching."""
         if not text or len(text.strip()) < 10:
             return None
 
-        # Try Claude first if available
-        if self.has_claude:
+        # Try Groq first if available
+        if self.has_groq:
             try:
-                message = self.client.messages.create(
-                    model="claude-3-5-sonnet-20241022",
+                message = self.client.chat.completions.create(
+                    model="llama-3.3-70b-versatile",
                     max_tokens=500,
                     messages=[
                         {
@@ -93,7 +101,7 @@ Return ONLY JSON, no other text."""
                     ]
                 )
 
-                response_text = message.content[0].text
+                response_text = message.choices[0].message.content
                 prediction_data = json.loads(response_text)
 
                 prediction = prediction_data.get("prediction", "No Prediction")
@@ -119,8 +127,8 @@ Return ONLY JSON, no other text."""
                     source=source
                 )
             except Exception as e:
-                logger.warning(f"Claude error for {source}: {e}. Using fallback.")
-                self.has_claude = False
+                logger.warning(f"Groq error for {source}: {e}. Using fallback.")
+                self.has_groq = False
 
         # Fallback: keyword-based extraction
         return self._extract_prediction_fallback(text, team_a, team_b, source)
@@ -176,16 +184,25 @@ Return ONLY JSON, no other text."""
     def _scrape_sportsgambler(self, team_a: str, team_b: str) -> None:
         """Scrape sportsgambler.com"""
         try:
-            url = f"https://www.sportsgambler.com/predictions/soccer/{team_a.lower()}-vs-{team_b.lower()}"
+            # Try the correct URL format first
+            from datetime import datetime
+            today = datetime.now().strftime("%Y-%m-%d")
+            url = f"https://www.sportsgambler.com/betting-tips/football/{team_a.lower()}-vs-{team_b.lower()}-prediction-lineups-odds-{today}/"
             response = self.session.get(url, timeout=10)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
                 text = soup.get_text()
-                self.scraped_data.append({"source": "sportsgambler.com", "status": "✅", "url": url})
+                self.scraped_data.append({"source": "sportsgambler.com", "status": "✅", "url": url, "chars": len(text)})
+                logger.info(f"📊 sportsgambler.com: Scraped {len(text)} chars")
                 pred = self._extract_prediction(text, team_a, team_b, "sportsgambler.com")
                 if pred:
                     self.predictions.append(pred)
                     logger.info(f"✅ sportsgambler.com: {pred.team_or_player}")
+                else:
+                    logger.info(f"⚠️ sportsgambler.com: No prediction extracted")
+            else:
+                logger.warning(f"❌ sportsgambler.com: Status {response.status_code}")
+                self.scraped_data.append({"source": "sportsgambler.com", "status": "❌", "error": f"Status {response.status_code}"})
         except Exception as e:
             logger.warning(f"❌ sportsgambler.com: {e}")
             self.scraped_data.append({"source": "sportsgambler.com", "status": "❌", "error": str(e)})

@@ -26,73 +26,74 @@ USAGE:
 
 import sys
 import json
+import os
+import asyncio
+from dotenv import load_dotenv
 from services import MatchService, ConsensusService
-from services.prediction_service_real import RealPredictionService
+from services.prediction_scraper_real import PredictionScraperReal
 from services.supabase_service import SupabaseService
 from core.logger import logger
 
+# Load environment variables from .env file
+load_dotenv()
 
-def main():
+
+async def main():
     """
     Main entry point - orchestrates the entire prediction workflow.
-    
+
     WORKFLOW:
     1. Initialize services
     2. Get user input
     3. Validate teams
     4. Get match info
-    5. Scrape predictions
+    5. Scrape predictions (using Playwright with 4 REAL prediction sites)
     6. Calculate consensus
     7. Generate recommendations
     8. Return results
     """
-    
+
     # STEP 1: Initialize services
     logger.info("Initializing services...")
     match_service = MatchService()
-    prediction_service = RealPredictionService()
+    prediction_scraper = PredictionScraperReal()
     consensus_service = ConsensusService()
-    
+
     # STEP 2: Get user input
     print("\n" + "="*70)
     print("SOCCER BETTING CONSENSUS SYSTEM")
     print("="*70)
-    
+
     team_a = input("\nEnter first team: ").strip()
     team_b = input("Enter second team: ").strip()
-    
+
     # STEP 3: Validate teams
     logger.info(f"Validating teams: {team_a} vs {team_b}")
     is_valid, error = match_service.validate_teams(team_a, team_b)
-    
+
     if not is_valid:
         print(f"\n❌ Error: {error}")
         return
-    
+
     print(f"\n✅ Teams validated: {team_a} vs {team_b}")
-    
+
     # STEP 4: Get match info
     logger.info("Retrieving match information...")
     match_info = match_service.get_match_info(team_a, team_b)
     print(f"✅ Match info retrieved")
-    
-    # STEP 5: Scrape predictions (using HTTP scraper with 5 REAL sites)
+
+    # STEP 5: Scrape predictions (using Playwright with 4 REAL prediction sites)
     logger.info("Scraping predictions from websites...")
     print("\n📡 Scraping predictions...")
-    predictions = prediction_service.scrape_predictions(team_a, team_b)
+    predictions = await prediction_scraper.get_predictions(team_a, team_b)
     print(f"✅ Scraped {len(predictions)} predictions")
 
     # Display scraped data
     print("\n" + "="*70)
     print("SCRAPED DATA FROM WEBSITES")
     print("="*70)
-    scraped_data = prediction_service.get_scraped_data()
-    for data in scraped_data:
-        if "error" in data:
-            print(f"{data['status']} {data['source']}: {data['error']}")
-        else:
-            print(f"{data['status']} {data['source']}")
-            print(f"   URL: {data['url']}")
+    for source, text in prediction_scraper.scraped_text.items():
+        print(f"✅ {source.upper()}: {len(text)} chars scraped")
     
     # STEP 6: Calculate consensus
     logger.info("Calculating consensus...")
@@ -151,7 +152,7 @@ def main():
 
 if __name__ == "__main__":
     try:
-        main()
+        asyncio.run(main())
     except KeyboardInterrupt:
         print("\n\n❌ Interrupted by user")
         sys.exit(1)
