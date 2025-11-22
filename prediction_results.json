@@ -1,16 +1,16 @@
 {
   "match": {
-    "team_a": "Barcelona",
-    "team_b": "Athletic Bilbao",
+    "team_a": "Manchester United",
+    "team_b": "Arsenal",
     "odds": {
-      "team_a": 2.35,
+      "team_a": 2.43,
       "draw": 4.0,
-      "team_b": 3.09,
+      "team_b": 2.95,
       "source": "Calculated from team strength"
     }
   },
   "prediction": {
-    "team": "barcelona",
+    "team": "arsenal",
     "consensus_score": 0.72,
     "votes": 1,
     "sources": [
@@ -26,14 +26,14 @@
   },
   "all_predictions": [
     {
-      "team_or_player": "Barcelona",
+      "team_or_player": "Arsenal",
       "pick_type": "moneyline",
       "confidence": "high",
       "odds": null,
-      "reasoning": "sportsgambler.com prediction favors Barcelona",
+      "reasoning": "sportsgambler.com prediction favors Arsenal",
       "source": "sportsgambler.com",
       "article_id": null,
-      "extracted_at": "2025-11-22T09:49:29.786966"
+      "extracted_at": "2025-11-22T10:19:13.793864"
     },
     {
       "team_or_player": "Draw",
@@ -43,7 +43,7 @@
       "reasoning": "sportsmole.co.uk suggests draw is likely",
       "source": "sportsmole.co.uk",
       "article_id": null,
-      "extracted_at": "2025-11-22T09:49:32.026202"
+      "extracted_at": "2025-11-22T10:19:15.510052"
     },
     {
       "team_or_player": "Both Teams to Score",
@@ -53,10 +53,10 @@
       "reasoning": "mightytips.com suggests both teams will score",
       "source": "mightytips.com",
       "article_id": null,
-      "extracted_at": "2025-11-22T09:49:36.868659"
+      "extracted_at": "2025-11-22T10:19:19.858174"
     }
   ],
   "reasoning": [
-    "sportsgambler.com prediction favors Barcelona"
+    "sportsgambler.com prediction favors Arsenal"
   ]
 }
