@@ -76,7 +76,7 @@ def main():
     match_info = match_service.get_match_info(team_a, team_b)
     print(f"✅ Match info retrieved")
     
-    # STEP 5: Scrape predictions
+    # STEP 5: Scrape predictions (using HTTP scraper with real search)
     logger.info("Scraping predictions from websites...")
     print("\n📡 Scraping predictions...")
     predictions = prediction_service.scrape_predictions(team_a, team_b)

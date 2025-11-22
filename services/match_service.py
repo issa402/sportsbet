@@ -46,15 +46,26 @@ class MatchService:
 
     # Known teams in major leagues (can be expanded)
     KNOWN_TEAMS = {
+        # La Liga (Spain)
         'real madrid', 'barcelona', 'atletico madrid', 'sevilla', 'valencia',
+        'getafe', 'villarreal', 'real sociedad', 'betis', 'real betis', 'celta vigo',
+        'athletic bilbao', 'athletic', 'bilbao', 'osasuna', 'mallorca', 'girona',
+        'rayo vallecano', 'vallecano', 'alaves', 'deportivo alaves',
+        # Premier League (England)
         'manchester united', 'manchester city', 'liverpool', 'arsenal', 'chelsea',
         'tottenham', 'newcastle', 'brighton', 'aston villa', 'west ham',
-        'paris saint-germain', 'psg', 'lyon', 'marseille', 'monaco',
+        'fulham', 'brentford', 'crystal palace', 'everton', 'ipswich',
+        # Bundesliga (Germany)
         'bayern munich', 'borussia dortmund', 'bayer leverkusen', 'rb leipzig',
+        'vfl wolfsburg', 'wolfsburg', 'eintracht frankfurt', 'frankfurt',
+        'vfb stuttgart', 'stuttgart', 'sc freiburg', 'freiburg',
+        # Serie A (Italy)
         'juventus', 'ac milan', 'inter milan', 'napoli', 'roma',
+        'lazio', 'fiorentina', 'atalanta', 'torino', 'bologna',
+        # Other European teams
         'ajax', 'psv', 'feyenoord', 'az alkmaar',
         'benfica', 'porto', 'sporting cp',
-        'getafe', 'villarreal', 'real sociedad', 'betis', 'real betis', 'celta vigo',
+        'paris saint-germain', 'psg', 'lyon', 'marseille', 'monaco',
         'rangers', 'celtic', 'hearts', 'hibernian',
         'dinamo zagreb', 'dinamo', 'zagreb',
     }
@@ -85,35 +96,36 @@ class MatchService:
     
     def validate_teams(self, team_a: str, team_b: str) -> Tuple[bool, Optional[str]]:
         """
-        Validate that both teams exist and are different.
-        
+        Validate that both teams are different (accept ANY team name).
+
         PARAMETERS:
         - team_a (str): First team name
         - team_b (str): Second team name
-        
+
         RETURNS:
         - Tuple[bool, Optional[str]]: (is_valid, error_message)
-        
+
         USAGE:
             is_valid, error = service.validate_teams("Real Madrid", "Getafe")
             if not is_valid:
                 print(f"Error: {error}")
+
+        NOTE: We accept ANY team name from top 4 leagues (La Liga, Premier League, Bundesliga, Serie A).
+        The system will attempt to scrape predictions for any team you provide.
         """
         # Normalize team names
         team_a_norm = team_a.strip().lower()
         team_b_norm = team_b.strip().lower()
-        
+
         # Check if teams are the same
         if team_a_norm == team_b_norm:
             return False, "Teams cannot be the same"
-        
-        # Check if teams exist
-        if team_a_norm not in self.KNOWN_TEAMS:
-            return False, f"Team '{team_a}' not found in database"
-        
-        if team_b_norm not in self.KNOWN_TEAMS:
-            return False, f"Team '{team_b}' not found in database"
-        
+
+        # Check if team names are empty
+        if not team_a_norm or not team_b_norm:
+            return False, "Team names cannot be empty"
+
+        # Accept ANY team - no hardcoded validation
         return True, None
     
     def get_match_info(self, team_a: str, team_b: str) -> Dict:

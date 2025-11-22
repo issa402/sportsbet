@@ -162,26 +162,25 @@ Return ONLY JSON, no other text."""
                 confidence_str = prediction_data.get("confidence", "medium").lower()
                 reasoning = prediction_data.get("reasoning", "")
 
-                if prediction == "No Prediction":
-                    return None
+                if prediction != "No Prediction":
+                    # Map confidence
+                    confidence_map = {
+                        "high": ConfidenceLevel.HIGH,
+                        "medium": ConfidenceLevel.MEDIUM,
+                        "low": ConfidenceLevel.LOW
+                    }
+                    confidence = confidence_map.get(confidence_str, ConfidenceLevel.MEDIUM)
 
-                # Map confidence
-                confidence_map = {
-                    "high": ConfidenceLevel.HIGH,
-                    "medium": ConfidenceLevel.MEDIUM,
-                    "low": ConfidenceLevel.LOW
-                }
-                confidence = confidence_map.get(confidence_str, ConfidenceLevel.MEDIUM)
+                    logger.info(f"✅ {source} (Claude AI): {prediction} ({confidence_str})")
 
-                logger.info(f"✅ {source} (Claude AI): {prediction} ({confidence_str})")
-
-                return BettingPick(
-                    team_or_player=prediction,
-                    pick_type=PickType.MONEYLINE,
-                    confidence=confidence,
-                    reasoning=reasoning or f"{source}: {prediction}",
-                    source=source
-                )
+                    return BettingPick(
+                        team_or_player=prediction,
+                        pick_type=PickType.MONEYLINE,
+                        confidence=confidence,
+                        reasoning=reasoning or f"{source}: {prediction}",
+                        source=source
+                    )
+                # If LLM says "No Prediction", fall through to keyword fallback
             except Exception as e:
                 logger.warning(f"⚠️  Claude error for {source}: {e}. Using fallback keyword matching.")
                 # Don't disable Claude entirely, just for this request

@@ -1,16 +1,16 @@
 {
   "match": {
-    "team_a": "Manchester City",
-    "team_b": "Liverpool",
+    "team_a": "Barcelona",
+    "team_b": "Athletic Bilbao",
     "odds": {
-      "team_a": 2.58,
+      "team_a": 2.35,
       "draw": 4.0,
-      "team_b": 2.76,
+      "team_b": 3.09,
       "source": "Calculated from team strength"
     }
   },
   "prediction": {
-    "team": "liverpool",
+    "team": "barcelona",
     "consensus_score": 0.72,
     "votes": 1,
     "sources": [
@@ -26,14 +26,14 @@
   },
   "all_predictions": [
     {
-      "team_or_player": "Liverpool",
+      "team_or_player": "Barcelona",
       "pick_type": "moneyline",
       "confidence": "high",
       "odds": null,
-      "reasoning": "sportsgambler.com prediction favors Liverpool",
+      "reasoning": "sportsgambler.com prediction favors Barcelona",
       "source": "sportsgambler.com",
       "article_id": null,
-      "extracted_at": "2025-11-20T18:42:54.142850"
+      "extracted_at": "2025-11-22T09:49:29.786966"
     },
     {
       "team_or_player": "Draw",
@@ -43,7 +43,7 @@
       "reasoning": "sportsmole.co.uk suggests draw is likely",
       "source": "sportsmole.co.uk",
       "article_id": null,
-      "extracted_at": "2025-11-20T18:42:55.731320"
+      "extracted_at": "2025-11-22T09:49:32.026202"
     },
     {
       "team_or_player": "Both Teams to Score",
@@ -53,10 +53,10 @@
       "reasoning": "mightytips.com suggests both teams will score",
       "source": "mightytips.com",
       "article_id": null,
-      "extracted_at": "2025-11-20T18:43:00.147233"
+      "extracted_at": "2025-11-22T09:49:36.868659"
     }
   ],
   "reasoning": [
-    "sportsgambler.com prediction favors Liverpool"
+    "sportsgambler.com prediction favors Barcelona"
   ]
 }
